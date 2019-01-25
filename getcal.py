@@ -20,16 +20,16 @@ def get_cal():
 	# Return calibrator based on LST
 	if lst < 3:
 		bestcal = '3C48'
-		ra,dec = '01:37:41.2994','33:09:35.134'
+		ra,dec = ra2dec('01:37:41.2994'),dec2dec('33:09:35.134')
 	elif lst < 10:
 		bestcal = '3C147' 
-		ra,dec = '05:42:36.1379','49:51:07.234'
+		ra,dec = ra2dec('05:42:36.1379'),dec2dec('49:51:07.234')
 	elif lst < 19.5:
 		bestcal = '3C286'
-		ra,dec = '13:31:08.2879','30:30:32.958'
+		ra,dec = ra2dec('13:31:08.2879'),dec2dec('30:30:32.958')
 	else:
 		bestcal = '3C48'
-		ra,dec = '01:37:41.2994','33:09:35.134'
+		ra,dec = ra2dec('01:37:41.2994'),dec2dec('33:09:35.134')
 
 	return (bestcal,ra,dec)
 

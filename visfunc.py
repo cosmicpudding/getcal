@@ -29,10 +29,25 @@ def dec2str(dec):
         str = '%02d:%02d:%05.2f' % (dd, mm, abs(ss))
     return str
 
+def ra2dec(ra):
+    if not ra:
+        return None
+      
+    r = ra.split(':')
+    if len(r) == 2:
+        r.append(0.0)
+    return (float(r[0]) + float(r[1])/60.0 + float(r[2])/3600.0)*15
 
-# def dec2str(time):
-
-#     strtime = str(dectime.split('.')[0]) + ':' + 
+def dec2dec(dec):
+    if not dec:
+        return None
+    d = dec.split(':')
+    if len(d) == 2:
+        d.append(0.0)
+    if d[0].startswith('-') or float(d[0]) < 0:
+        return float(d[0]) - float(d[1])/60.0 - float(d[2])/3600.0
+    else:
+        return float(d[0]) + float(d[1])/60.0 + float(d[2])/3600.0
 
 # convert to UT
 def aest2ut(aest):
